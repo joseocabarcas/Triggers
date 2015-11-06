@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="es">
+  <title>Triggers</title>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+
+</head>
+<body>
+
+
+
+  <nav class="navbar navbar-dark bg-primary">
+    <!-- Toggle Button -->
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
+      ☰
+    </button>
+    <a href="{% url '/' %}" class="navbar-brand">Triggers</a>
+
+    <div class="collapse navbar-toggleable-xs" id="nav-content">
+      <ul class="nav navbar-nav pull-right">
+
+
+        {% if  user.is_authenticated %}
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+  
+  <div class="container-fluid" >
+    {% block maincontent %}
+    {% endblock maincontent %}
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+</body>
+</html>
