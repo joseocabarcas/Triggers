@@ -54,6 +54,5 @@ class Empleado(models.Model):
     cedula = models.CharField(max_length=20)
     empresa = models.CharField(max_length=50)
     salario = models.PositiveIntegerField()
-
-    REQUIRED_FIELDS = (nombres,apellidos,cedula,empresa,salario)
+    usuario = models.CharField(max_length=50)
 
