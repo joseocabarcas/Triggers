@@ -26,7 +26,7 @@ def logueo(request):
 			if usuario is not None:
 				if usuario.is_active:
 					login(request,usuario)
-					return redirect('inicio')
+					return redirect('/api/empleados/')
 			else:
 				return render(request,'login.html',{'login_form':login_form},context_instance=RequestContext(request))
 		else:
